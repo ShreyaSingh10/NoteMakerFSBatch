@@ -22,6 +22,7 @@ export default class AddNotes extends React.Component {
 			name: this.state.name
 		}
 		this.props.addNote(note);
+		this.setState({name: ''}); //-> to remove value from input field upon clicking on add button
 	}
 
 	render(){
@@ -33,6 +34,7 @@ export default class AddNotes extends React.Component {
 						placeholder="Add your note"
 						type="text"
 						onChange= {this.handleChange}
+						value={this.state.name}
 					/>
 					<button>Add</button>
 				</form>
