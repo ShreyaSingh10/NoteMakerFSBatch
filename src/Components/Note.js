@@ -18,19 +18,22 @@ export default class Note extends React.Component {
 		this.setState({name: name}); //setting in state (one way)
 	}
 
-	updateNote = () => {
-		this.props.editNote(this.state.name, this.props.place);
-	}
+	// updateNote = () => {
+	// 	this.props.editNote(this.state.name, this.props.place);
+	// }
 
 	render(){
+		const {name} = this.state;
+		const {editNote, deleteNote, place} = this.props;
 		return(
 			<div>
 				<input
 					type="text"
-					value={this.state.name}
+					value={name}
 					onChange={this.handleChange}
-					onBlur={this.updateNote}
+					onBlur={() => editNote(name, place)}
 				/>
+				<button onClick={() => deleteNote(place)}>X</button>
 			</div>
 		)
 	}

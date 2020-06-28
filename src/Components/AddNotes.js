@@ -14,7 +14,7 @@ export default class AddNotes extends React.Component {
 	}
 
 	handleSubmit = (e) => {
-		console.log("SUBMITTING");
+		//console.log("SUBMITTING");
 		e.preventDefault(); // use this whenever u are working with forms to stop
 		//page from reloading
 		//child parent se communicate kare - doesnt mean child has to return a value to parent
